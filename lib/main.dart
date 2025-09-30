@@ -39,7 +39,7 @@ class MyApp extends StatelessWidget {
                   ),
                 ),
                 child: Text(
-                  'Start',
+                  'Start Quiz',
                   style: TextStyle(
                     fontSize: 22,
                     color: Colors.black,
