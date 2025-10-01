@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 
 class StartScreen extends StatelessWidget {
@@ -28,14 +26,9 @@ class StartScreen extends StatelessWidget {
           const SizedBox(
             height: 20,
           ),
-          ElevatedButton(
+          OutlinedButton.icon(
             onPressed: () {},
-            style: ButtonStyle(
-              backgroundColor: WidgetStatePropertyAll(
-                const Color.fromARGB(255, 201, 201, 201),
-              ),
-            ),
-            child: Text(
+            label: Text(
               'Start Quiz',
               style: TextStyle(
                 fontSize: 22,
@@ -43,6 +36,7 @@ class StartScreen extends StatelessWidget {
                 fontWeight: FontWeight.w500,
               ),
             ),
+            icon: Icon(Icons.arrow_forward_sharp),
           ),
         ],
       ),
