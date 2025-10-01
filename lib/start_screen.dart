@@ -11,6 +11,7 @@ class StartScreen extends StatelessWidget {
         children: [
           Image.asset(
             'assets/images/question-mark.png',
+            width: 400,
           ),
           const SizedBox(
             height: 20,
@@ -36,7 +37,10 @@ class StartScreen extends StatelessWidget {
                 fontWeight: FontWeight.w500,
               ),
             ),
-            icon: Icon(Icons.arrow_forward_sharp),
+            icon: Icon(
+              Icons.arrow_forward_sharp,
+              color: Colors.black,
+            ),
           ),
         ],
       ),
