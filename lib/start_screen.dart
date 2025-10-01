@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 class StartScreen extends StatelessWidget {
@@ -12,7 +14,10 @@ class StartScreen extends StatelessWidget {
           Image.asset(
             'assets/images/question-mark.png',
           ),
-          Text(
+          const SizedBox(
+            height: 20,
+          ),
+          const Text(
             'Ready for a challenge?',
             style: TextStyle(
               fontSize: 26,
@@ -20,7 +25,7 @@ class StartScreen extends StatelessWidget {
               fontWeight: FontWeight.w600,
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           ElevatedButton(
