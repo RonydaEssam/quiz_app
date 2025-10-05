@@ -12,6 +12,27 @@ class Questions extends StatefulWidget {
 class _QuestionsState extends State<Questions> {
   @override
   Widget build(BuildContext context) {
-    return const Text('Questions Screen');
+    return Column(
+      children: const [
+        Text('Questions Screen'),
+        SizedBox(height: 30),
+        ElevatedButton(
+          onPressed: () {},
+          child: Text('Answer 1'),
+        ),
+        ElevatedButton(
+          onPressed: () {},
+          child: Text('Answer 2'),
+        ),
+        ElevatedButton(
+          onPressed: () {},
+          child: Text('Answer 3'),
+        ),
+        ElevatedButton(
+          onPressed: () {},
+          child: Text('Answer 4'),
+        ),
+      ],
+    );
   }
 }
