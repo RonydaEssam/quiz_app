@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_app/answer_button.dart';
+import 'package:quiz_app/models/quiz_questions.dart';
 
 class Questions extends StatefulWidget {
   const Questions({super.key});
@@ -13,38 +14,30 @@ class Questions extends StatefulWidget {
 class _QuestionsState extends State<Questions> {
   @override
   Widget build(BuildContext context) {
+    final currentQuestion = questions[0];
+
     return SizedBox(
       width: double.infinity,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const Text(
-            'Question... ',
-            style: TextStyle(
-              color: Colors.black,
-              fontSize: 24,
-              fontWeight: FontWeight.w400,
+          Padding(
+            padding: const EdgeInsets.all(16),
+            child: Text(
+              currentQuestion.text,
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 24,
+                fontWeight: FontWeight.w400,
+              ),
+              textAlign: TextAlign.center,
             ),
           ),
-          const SizedBox(height: 20),
-          AnswerButton(
-            onTap: () {},
-            answerText: 'Answer 1',
-          ),
-          const SizedBox(height: 8),
-          AnswerButton(
-            onTap: () {},
-            answerText: 'Answer 2',
-          ),
-          const SizedBox(height: 8),
-          AnswerButton(
-            onTap: () {},
-            answerText: 'Answer 3',
-          ),
-          const SizedBox(height: 8),
-          AnswerButton(
-            onTap: () {},
-            answerText: 'Answer 4',
+          const SizedBox(height: 10),
+          ...currentQuestion.answers.map(
+            (answer) {
+              return AnswerButton(answerText: answer, onTap: () {});
+            },
           ),
         ],
       ),
