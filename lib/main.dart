@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:quiz_app/models/quiz_questions.dart';
 import 'package:quiz_app/start_screen.dart';
 import 'package:quiz_app/questions.dart';
+import 'package:quiz_app/results_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -31,8 +32,8 @@ class _MyAppState extends State<MyApp> {
 
     if (selectedAnswers.length == questions.length) {
       setState(() {
+        activeScreen = const ResultsScreen();
         selectedAnswers = [];
-        activeScreen = StartScreen(switchScreen);
       });
     }
   }
