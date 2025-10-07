@@ -32,8 +32,10 @@ class _MyAppState extends State<MyApp> {
 
     if (selectedAnswers.length == questions.length) {
       setState(() {
-        activeScreen = const ResultsScreen();
-        selectedAnswers = [];
+        activeScreen = ResultsScreen(
+          chosenAnswers: selectedAnswers,
+          onRestart: restartQuiz,
+        );
       });
     }
   }
@@ -41,6 +43,13 @@ class _MyAppState extends State<MyApp> {
   void switchScreen() {
     setState(() {
       activeScreen = Questions(onSelectAnswer: chooseAnswer);
+    });
+  }
+
+  void restartQuiz() {
+    setState(() {
+      selectedAnswers = [];
+      activeScreen = StartScreen(switchScreen);
     });
   }
 
