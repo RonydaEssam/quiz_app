@@ -22,7 +22,7 @@ class AnswerButton extends StatelessWidget {
       ),
       child: Text(
         answerText,
-        style: TextStyle(
+        style: const TextStyle(
           fontSize: 16,
         ),
         textAlign: TextAlign.center,

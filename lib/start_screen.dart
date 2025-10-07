@@ -32,7 +32,7 @@ class StartScreen extends StatelessWidget {
           ),
           OutlinedButton.icon(
             onPressed: startQuestions,
-            label: Text(
+            label: const Text(
               'Start Quiz',
               style: TextStyle(
                 fontSize: 22,
@@ -40,7 +40,7 @@ class StartScreen extends StatelessWidget {
                 fontWeight: FontWeight.w500,
               ),
             ),
-            icon: Icon(
+            icon: const Icon(
               Icons.arrow_forward_sharp,
               color: Colors.black,
             ),
