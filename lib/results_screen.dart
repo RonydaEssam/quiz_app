@@ -35,24 +35,45 @@ class ResultsScreen extends StatelessWidget {
       return data['user_answer'] == data['correct_answer'];
     }).length;
 
-    return SizedBox(
-      width: double.infinity,
-      child: Container(
-        margin: const EdgeInsets.all(40),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              'You answered $numCorrectAnswers out of $numTotalQuestions questions corectly!',
+    return Center(
+      child: SizedBox(
+        height: 550,
+        width: double.infinity,
+        child: SingleChildScrollView(
+          child: Container(
+            margin: const EdgeInsets.all(30),
+            child: Column(
+              children: [
+                Text(
+                  'You answered $numCorrectAnswers out of $numTotalQuestions questions corectly!',
+                  style: const TextStyle(
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+                const SizedBox(height: 30),
+                QuestionsSumary(summaryData),
+                const SizedBox(height: 30),
+                TextButton.icon(
+                  onPressed: onRestart,
+                  label: const Text(
+                    'Restart Quiz!',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  icon: const Icon(
+                    Icons.keyboard_double_arrow_right,
+                    color: Colors.black,
+                    size: 28,
+                  ),
+                ),
+              ],
             ),
-            const SizedBox(height: 30),
-            QuestionsSumary(summaryData),
-            const SizedBox(height: 30),
-            TextButton(
-              onPressed: onRestart,
-              child: const Text('Restart Quiz!'),
-            ),
-          ],
+          ),
         ),
       ),
     );
